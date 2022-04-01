@@ -2,10 +2,10 @@ package qiyexiaofeifuwu
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object spark01_MapReduce {
+object spark01_MapReduce_1 {
   def main(args: Array[String]): Unit = {
     System.setProperty("hadoop.home.dir","D:\\Program Files\\hadoop")
-    val sparkConf = new SparkConf().setMaster("local[*]").setAppName("spark01_MapReduce")
+    val sparkConf = new SparkConf().setMaster("local[*]").setAppName("spark01_MapReduce_1")
     val sc = new SparkContext(sparkConf)
     val lines = sc.textFile("src/main/resources/jd_4706.csv")
     val lines1 = lines.cache()
