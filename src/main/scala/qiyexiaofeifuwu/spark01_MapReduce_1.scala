@@ -25,7 +25,7 @@ object spark01_MapReduce_1 {
       }
     )
     println("=== “删除缺失值大于3个的字段的数据条数为"+(lines1.count()-result.count())+"条”===")
-
+    result.coalesce(1).saveAsTextFile("src/main/resources/accommodation_output1")
     sc.stop()
   }
 }

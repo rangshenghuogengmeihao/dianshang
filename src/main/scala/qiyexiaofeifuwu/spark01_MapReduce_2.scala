@@ -22,6 +22,7 @@ object spark01_MapReduce_2 {
       }
     )
     println(result.count())
+    result.coalesce(1).saveAsTextFile("src/main/resources/accommodation_output2")
     sc.stop()
   }
 }
