@@ -16,12 +16,15 @@ object spark01_MapReduce {
       }
     ).max()
     val result = lines1.filter(
-      _.split(",").length >= theMax - 3
+      line=>
+      if (line.split(",").length >= theMax - 3){
+        true
+      } else {
+        println(line)
+        false
+      }
     )
     println("=== “删除缺失值大于3个的字段的数据条数为"+(lines1.count()-result.count())+"条”===")
-//    println(theMax)
-
-//    lines.collect().foreach(println)
 
     sc.stop()
   }
